@@ -22,8 +22,6 @@ services:
       - /app/node_modules
     ports:
       - "8080:80"
-    environment:
-      - API_BASE_URL=http://backend:8081
 
   backend:
     container_name: backend
@@ -41,6 +39,7 @@ services:
       - POSTGRES_PASSWORD=password
       - DEBUG=True
       - ALLOWED_HOSTS=localhost
+      - CORS_ALLOWED_ORIGINS=http://localhost:8080
       - SECRET_KEY='django-insecure-hgnk_w#2j!sd$$3vapnfm6)a=pz9gdqr%cz@qvow$$l5=85jllh4'
     depends_on:
       - db

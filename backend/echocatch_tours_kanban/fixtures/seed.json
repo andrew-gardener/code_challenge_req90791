@@ -1,0 +1,130 @@
+[
+{
+    "model": "echocatch_tours_kanban.swimlane",
+    "pk": "2dydkFLLRtaGFqZRfkmhoQ",
+    "fields": {
+        "name": "Docked",
+        "position": 0,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.swimlane",
+    "pk": "85Tgc9KXRuqfiaulEO82jg",
+    "fields": {
+        "name": "Inbound to Harbor",
+        "position": 2,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.swimlane",
+    "pk": "TyUxHXQES_OgYWEy8HXHzQ",
+    "fields": {
+        "name": "Maintenance",
+        "position": 3,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.swimlane",
+    "pk": "yOjt6OAzS_6WrAQm3Y-qaQ",
+    "fields": {
+        "name": "Outbound to Sea",
+        "position": 1,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "1syP_C__RHWoKPHGrtJ6aw",
+    "fields": {
+        "name": "The Felicity",
+        "swimlane": "2dydkFLLRtaGFqZRfkmhoQ",
+        "position": 0,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "7i-FpFDfTFew5HfkXAiOPw",
+    "fields": {
+        "name": "The Scout",
+        "swimlane": "yOjt6OAzS_6WrAQm3Y-qaQ",
+        "position": 0,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "IyMF0GvFRC6BBRWKsqfOwQ",
+    "fields": {
+        "name": "The Pandora",
+        "swimlane": "85Tgc9KXRuqfiaulEO82jg",
+        "position": 0,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "PCYcFr-tSzisVc2SHuLPYA",
+    "fields": {
+        "name": "The Ruler",
+        "swimlane": "yOjt6OAzS_6WrAQm3Y-qaQ",
+        "position": 2,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "QsJtNRwiTbuo3WCkkQt5Xg",
+    "fields": {
+        "name": "The Bullfinch",
+        "swimlane": "TyUxHXQES_OgYWEy8HXHzQ",
+        "position": 0,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "tEtd9JPSRuC00LJ_v9t8Sg",
+    "fields": {
+        "name": "The Firebrand",
+        "swimlane": "85Tgc9KXRuqfiaulEO82jg",
+        "position": 1,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "vJ-9eAcjTqWNjApj_ARAVA",
+    "fields": {
+        "name": "The Geyser",
+        "swimlane": "2dydkFLLRtaGFqZRfkmhoQ",
+        "position": 1,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+},
+{
+    "model": "echocatch_tours_kanban.boat",
+    "pk": "Zv-3uEqFT5G3mOtVksF-EA",
+    "fields": {
+        "name": "The Montford",
+        "swimlane": "yOjt6OAzS_6WrAQm3Y-qaQ",
+        "position": 1,
+        "created": "2022-09-17 20:10:10+0000",
+        "modified": "2022-09-17 20:10:10+0000"
+    }
+}
+]

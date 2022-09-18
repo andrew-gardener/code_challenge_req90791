@@ -12,6 +12,11 @@ class BoatSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'swimlane_id', 'modified']
         read_only_fields = ['id', 'modified']
 
+    # add boat to end of list on create
+    def create(self, validated_data):
+        swimlane = validated_data.get('swimlane')
+        validated_data['position'] = swimlane.boats.count()
+        return super().create(validated_data)
 
 class SwimlaneSerializer(serializers.ModelSerializer):
     boats = BoatSerializer(many=True)

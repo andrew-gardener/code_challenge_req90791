@@ -54,6 +54,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.navbar {
+  --bs-navbar-padding-y: 0;
+}
 .spinner {
   display: block;
   position: fixed;

@@ -42,7 +42,7 @@ const updateBoat = (boat, index) => {
 </script>
 
 <template>
-  <div class="col">
+  <div class="col-sm">
     <div class="card border-dark mb-3 swimlane-column">
       <h5 class="card-header">{{ swimlane.name }}</h5>
       <div class="card-body">
@@ -60,7 +60,6 @@ const updateBoat = (boat, index) => {
 
 <style scoped>
 .swimlane-column {
-  max-width: 20rem;
   min-height: 10rem;
 }
 .ghost-card {

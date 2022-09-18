@@ -1,0 +1,64 @@
+<script setup>
+import draggable from 'vuedraggable'
+import BoatCard from './BoatCard.vue'
+import { computed } from "vue"
+const props = defineProps({
+  swimlane: {
+    required: true,
+    type: Object,
+  }
+})
+const emit = defineEmits(['update:swimlane'])
+const swimlane = computed({
+  get: () => props.swimlane,
+  set: value => emit('update:swimlane', value)
+})
+
+const reorder = (event) => {
+  if (event.added) {
+    // update the order of the boats in the backend
+    return fetch(`${import.meta.env.VITE_API_BASE_URL}/swimlanes/${swimlane.value.id}/boats/`, {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        boats: swimlane.value.boats.map( boat => boat.id ),
+        touch: event.added.element.id,
+      })
+    }).then( response => response.json() )
+      .then( data => swimlane.value = data )
+      // suppress errors for now
+      .catch( (error) => console.error(error) )
+  }
+}
+</script>
+
+<template>
+  <div class="col">
+    <div class="card border-dark mb-3 swimlane-column">
+      <h5 class="card-header">{{ swimlane.name }}</h5>
+      <div class="card-body">
+        <div class="list-group">
+          <draggable v-model="swimlane.boats" item-key="id" group="boats" @change="reorder" ghost-class="ghost-card">
+            <template #item="{element, index}">
+              <boat-card :swimlane_id="swimlane.id" v-bind:boat="element" class="cursor-move"></boat-card>
+            </template>
+          </draggable>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.swimlane-column {
+  max-width: 20rem;
+}
+.ghost-card {
+  opacity: 0.5;
+}
+.cursor-move {
+  cursor: move;
+}
+</style>

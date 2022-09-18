@@ -32,6 +32,13 @@ const reorder = (event) => {
       .catch( (error) => console.error(error) )
   }
 }
+const updateBoat = (boat, index) => {
+  if (boat) {
+    swimlane.value.boats[index] = boat
+  } else {
+    swimlane.value.boats.splice(index, 1)
+  }
+}
 </script>
 
 <template>
@@ -42,7 +49,7 @@ const reorder = (event) => {
         <div class="list-group">
           <draggable v-model="swimlane.boats" item-key="id" group="boats" @change="reorder" ghost-class="ghost-card">
             <template #item="{element, index}">
-              <boat-card :swimlane_id="swimlane.id" v-bind:boat="element" class="cursor-move"></boat-card>
+              <boat-card v-bind:boat="element" @update:boat="updateBoat($event, index)" class="cursor-move"></boat-card>
             </template>
           </draggable>
         </div>
@@ -54,6 +61,7 @@ const reorder = (event) => {
 <style scoped>
 .swimlane-column {
   max-width: 20rem;
+  min-height: 10rem;
 }
 .ghost-card {
   opacity: 0.5;

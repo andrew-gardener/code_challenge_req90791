@@ -1,19 +1,20 @@
 <script setup>
 import { ref, computed } from "vue"
 const props = defineProps({
-    boat: {
-        required: true,
-        type: Object,
-    }
+  boat: {
+    required: true,
+    type: Object,
+  }
 })
 const emit = defineEmits(['update:boat', 'completed'])
 const boat = computed({
-    get: () => props.boat,
-    set: value => emit('update:boat', value)
+  get: () => props.boat,
+  set: value => emit('update:boat', value)
 })
 const isNew = boat.value.id === undefined
 const submitButton = isNew ? 'Create' : 'Update'
 const formUrl = `${import.meta.env.VITE_API_BASE_URL}/boats/` + (isNew ? '' : `${boat.value.id}/`)
+const formMethod =  isNew ? 'post' : 'put'
 
 const form = ref({
   name: boat.value.name || '',
@@ -21,7 +22,7 @@ const form = ref({
 
 const saveBoat = () => {
   return fetch(formUrl, {
-    method: 'post',
+    method: formMethod,
     headers: {
       'content-type': 'application/json'
     },

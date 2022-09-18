@@ -36,7 +36,7 @@ onMounted(() => {
       <a class="navbar-brand">EchoCatch Tours</a>
       <b-navbar-nav small="true">
         <b-nav-item>
-          <b-button @click="showNewBoatModal = !showNewBoatModal" variant="success">
+          <b-button @click="showNewBoatModal = true" variant="success">
             New Boat <font-awesome-icon icon="fa-solid fa-plus" />
           </b-button>
         </b-nav-item>

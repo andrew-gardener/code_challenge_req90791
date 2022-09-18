@@ -3,8 +3,8 @@ import timeago from 'vue-timeago3'
 import BootstrapVue3 from 'bootstrap-vue-3'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-library.add(faPlus)
+import { faPlus, faBars } from '@fortawesome/free-solid-svg-icons'
+library.add(faPlus, faBars)
 
 import App from './App.vue'
 

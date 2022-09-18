@@ -2,23 +2,23 @@
 import BoatForm from './BoatForm.vue'
 import { computed } from "vue"
 const props = defineProps({
-    boat: {
-        required: true,
-        type: Object,
-    },
-    showModal: {
-        required: true,
-        type: Boolean,
-    }
+  boat: {
+    required: true,
+    type: Object,
+  },
+  showModal: {
+    required: true,
+    type: Boolean,
+  }
 })
 const emit = defineEmits(['update:boat', 'update:showModal'])
 const boat = computed({
-    get: () => props.boat,
-    set: value => emit('update:boat', value)
+  get: () => props.boat,
+  set: value => emit('update:boat', value)
 })
 const showModal = computed({
-    get: () => props.showModal,
-    set: value => emit('update:showModal', value)
+  get: () => props.showModal,
+  set: value => emit('update:showModal', value)
 })
 const isNew = boat.value.id === undefined
 const title = isNew ? 'Add new boat' : `Update ${boat.value.name}`

@@ -5,8 +5,6 @@ from django.utils import timezone
 from echocatch_tours_kanban.models import Swimlane, Boat
 from echocatch_tours_kanban.serializers import SwimlaneSerializer, BoatSerializer, SwimlaneReorderBoatsSerializer
 
-from pprint import pprint
-
 class SwimlaneViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Swimlane.objects.all()
     serializer_class = SwimlaneSerializer

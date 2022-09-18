@@ -13,3 +13,6 @@ EXPOSE 80
 
 # copy source
 COPY . .
+
+ENTRYPOINT [ "./docker-entrypoint.sh" ]
+CMD [ "sh", "-c", "python manage.py runserver 0.0.0.0:${PORT:-80}" ]

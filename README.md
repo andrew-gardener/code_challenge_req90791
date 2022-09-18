@@ -27,6 +27,32 @@ Next setup tables & seed the database
     docker compose up -d
     docker compose exec -it backend ./manage.py test
 
+## Deployment
+
+Uses Heroku for the backend and github pages for the frontend. Deployment is automatic via github actions. The deployment runs can be seen [here](https://github.com/andrew-gardener/code_challenge_req90791/actions/workflows/deploy.yml).
+
+### Backend Heroku deployment notes
+
+Uses straight docker container deployment and a (free) Heroku Postgres add-on. Otherwise it just has some environment variables set in the app.
+
+    ALLOWED_HOSTS=code-challenge-req90791.herokuapp.com
+    CORS_ALLOWED_ORIGINS=https://code-challenge-req90791.herokuapp.com,https://req90791.andrewgardener.com
+    DATABASE_URL=<CONTAINS SECRETS>
+    POSTGRES_HOST=ec2-52-200-5-135.compute-1.amazonaws.com
+    POSTGRES_PORT=5432
+    POSTGRES_NAME=<CONTAINS SECRETS>
+    POSTGRES_USER=<CONTAINS SECRETS>
+    POSTGRES_PASSWORD=<CONTAINS SECRETS>
+    SECRET_KEY=<CONTAINS SECRETS>
+
+`DATABASE_URL` is set automatically by heroku
+
+Otherwise I just seeded the database with `heroku run ./manage.py loaddata seed`
+
+### Frontend github pages deployment notes
+
+`frotnend/.env.production` is hardcoded to point to the heroku backend which will populate. Otherwise it just uses a custom domain `req90791.andrewgardener.com` that I already had setup for my personal website.
+
 # Notes of decisions, observations, and assumptions
 
 ## Decisions
@@ -50,7 +76,6 @@ Next setup tables & seed the database
 
 - That it would be okay to seed default swimlanes mentioned in the instructions context into the database and there is no need to add/edit/remove the swimlanes dynamically (they are static).
 - Since its a small app, no pagination is needed for the backend api endpoints
-- Frontend can maintain order of boats within a swimlane (no need to validate ordering in backend)
 
 ## Mistakes/bad assumptions that I fixed
 

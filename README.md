@@ -27,6 +27,11 @@ Next setup tables & seed the database
     docker compose up -d
     docker compose exec -it backend ./manage.py test
 
+### Frontend
+
+    docker compose up -d
+    docker compose exec -it frontend yarn test:unit
+
 ## Deployment
 
 Uses Heroku for the backend and github pages for the frontend. Deployment is automatic via github actions. The deployment runs can be seen [here](https://github.com/andrew-gardener/code_challenge_req90791/actions/workflows/deploy.yml).

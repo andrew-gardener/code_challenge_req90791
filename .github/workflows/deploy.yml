@@ -18,9 +18,9 @@ jobs:
     - name: Install dependencies
       working-directory: frontend
       run: yarn install --frozen-lockfile --immutable
-    # - name: Run tests
-    #   working-directory: frontend
-    #   run: yarn test:unit
+    - name: Run tests
+      working-directory: frontend
+      run: yarn test:unit
 
   deploy_frontend:
     needs: [ 'frontend_tests', 'backend_tests' ]

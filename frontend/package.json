@@ -8,7 +8,7 @@
     "dev": "vite --port 80 --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --port 80",
-    "test:unit": "vitest --environment jsdom",
+    "test:unit": "VITE_API_BASE_URL=http://mock.server vitest --environment jsdom",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
     "vite": "^3.0.9",
-    "vitest": "^0.23.0"
+    "vitest": "^0.23.0",
+    "vitest-fetch-mock": "^0.2.1"
   }
 }

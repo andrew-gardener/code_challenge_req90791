@@ -85,6 +85,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'OPTIONS': { 'sslmode': os.environ.get('POSTGRES_SSLMODE', 'prefer') },
     }
 }
 
